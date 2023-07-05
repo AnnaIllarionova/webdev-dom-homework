@@ -234,14 +234,9 @@ fetch('https://wedev-api.sky.pro/api/v1/AnnaIllarionova/comments', {
   })
 }).then((response) => {
   response.json().then((responseData) => {
-    comments = responseData.comments;
-    renderComments();
-  })
-})
-
-fetch('https://wedev-api.sky.pro/api/v1/AnnaIllarionova/comments', {
-  method: "GET"
-}).then((answer) => {
+    fetch('https://wedev-api.sky.pro/api/v1/AnnaIllarionova/comments', {
+    method: "GET"
+  }).then((answer) => {
   answer.json().then((answerData) => {
     //Преобразовываем данные из формата API в формат ленты
     const appComments = answerData.comments.map((comment) => {
@@ -277,6 +272,9 @@ fetch('https://wedev-api.sky.pro/api/v1/AnnaIllarionova/comments', {
     renderComments();
   });
 });
+  })
+})
+
 
 renderComments();
 
